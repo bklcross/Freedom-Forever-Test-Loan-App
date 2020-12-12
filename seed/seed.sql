@@ -6,7 +6,7 @@ VALUES
     ("John", "Doe", "3310 Walnut Ln", "Lac Du Flambeau", "WI", "54538", "(715) 588-7992", "December 5, 1947", "9113", "170000"),
     ("Mike", "Chan", "807 W Commonwealth Ave", "Alhambra", "CA", "91801", "(626) 293-8186", "April 1, 1956", "1866", "230000"),
     ("Ashley", "Rodriguez", "5067 Oak Bluff Dr", "High Ridge", "MO", "63049", "(636) 677-1665", "October 8, 1995", "9659", "80000"),
-    ("Kevin", "Tupik", "501 N B St", "Exeter", "CA", "93221", "(559) 594-1098", "February 19, 2003", "3431", "5400"),
+    ("Kevin", "Tupik", "501 N B St", "Exeter", "CA", "93221", "(559) 594-1098", "February 19, 2003", "3431", "54000"),
     ("Kunal", "Singh", "7690 W 150th S", "Jamestown", "IN", "46147", "(765) 676-5721", "February 14, 2004", "7480", "30000"),
     ("Malia", "Brown", "7455 Lizelia Rd #C3", "Marion", "MS", "39342", "(601) 693-3616", "June 13, 1955", "2186", "125000"),
     ("Sarah", "Lourd", "401 W Sunflower St", "Ruleville", "MS", "38771", "(662) 756-4665", "September 23, 1974", "5213", "170000"),
