@@ -1,7 +1,7 @@
 use loan_db;
 
 INSERT INTO loan_submissions
-    (first_name, last_name, street, city, state_abbrev, zip_code, phone_number, dob, ssn, pre_tax_income)
+    (first_name, last_name, street, city, state_abbrev, zip_code, phone_number, dob, ssn, pre_tax_income, createdAt, updatedAt)
 VALUES
     ("John", "Doe", "3310 Walnut Ln", "Lac Du Flambeau", "WI", "54538", "(715) 588-7992", "December 5, 1947", "9113", "170000"),
     ("Mike", "Chan", "807 W Commonwealth Ave", "Alhambra", "CA", "91801", "(626) 293-8186", "April 1, 1956", "1866", "230000"),

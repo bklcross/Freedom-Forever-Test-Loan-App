@@ -1,18 +1,19 @@
-var express = require("express");
-var db = require("./models");
+const express = require("express");
+const db = require("./models");
+const router = require("./routes/apiRoutes");
 
 //define port
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 //create express instance
-var app = express();
+const app = express();
 
 //configuring middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//requiring our routes
-//app.use(routes);
+//set up routes
+app.use("/api",router);
 
 //syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {

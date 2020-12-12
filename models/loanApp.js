@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  var Loan_Application = sequelize.define("Loan_Application", {
+  const loan_submissions = sequelize.define("loan_submissions", {
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -42,5 +42,5 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  return Loan_Application;
+  return loan_submissions;
 };
