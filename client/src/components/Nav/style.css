@@ -1,15 +1,22 @@
+.nav {
+  background-color: #272725;
+}
 .navbar {
-    background-color: #272725;
-    display: flex;
-    justify-content: space-between;
+  background-color: #272725;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
 }
 .navbar .nav-logo {
-    height: 80px;
+  height: 80px;
 }
 .navbar .navbar-nav .nav-link {
-    color: #FFFFFF;
+  color: #ffffff;
 }
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    text-decoration: underline;
-    color: lightskyblue
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: lightskyblue;
 }

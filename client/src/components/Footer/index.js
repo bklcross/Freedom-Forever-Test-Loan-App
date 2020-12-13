@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
+import "./style.css";
 
-function Footer() {
-  return (
-    <footer>
-      <hr />
-      <p className="pull-right">
-        <i className="fab fa-github" /> Proudly built using React.js
-      </p>
-    </footer>
-  );
-}
+export default class Footer extends Component {
+  constructor(props) {
+      super(props);
+  }
 
-export default Footer;
+  render() {
+    return (
+      <footer className="footer">
+        <span className="copyright">© 2020 Copyright: Freedom Forever</span>
+      </footer>
+    )
+  };
+};

@@ -1,0 +1,62 @@
+.welcome {
+  background-color: #ffffff;
+}
+.welcome .section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: auto;
+}
+.welcome .introduction {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+.welcome .introduction .introduction-text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.welcome .introduction .introduction-text-container .title {
+  font-size: 56px;
+  font-family: "Lato";
+  font-weight: 700;
+}
+.welcome .introduction .introduction-text-container .subtitle {
+  font-size: 24px;
+  font-family: "Lato";
+}
+.welcome .introduction .introduction-text-container .apply-btn {
+  background-color: #34d9eb;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 8px 16px;
+}
+.welcome .introduction .introduction-text-container .apply-btn:hover {
+  background-color: #20828d;
+  color: #ffffff;
+}
+.welcome .introduction .introduction-img-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.welcome .benefits {
+  padding: 0 0 100px 0;
+}
+.welcome .benefits .section-header {
+  font-family: "Lato";
+  font-weight: 600;
+  padding: 16px 0 32px 0;
+}
+.welcome .benefits .container {
+  max-width: 1440px;
+}
+.welcome .benefits .benefit-card i {
+  color: #720e59;
+}
