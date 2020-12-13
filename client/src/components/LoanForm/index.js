@@ -6,41 +6,121 @@ export default class LoanForm extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      first_name: "",
+      last_name: "",
+      street: "",
+      city: "",
+      state: "",
+      zip_code: "",
+      phone1: "",
+      phone2: "",
+      phone3: "",
+      month: "",
+      day: "",
+      year: "",
+      ssn: "",
+      pre_tax_income: "",
+    };
+
+    //bind events
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  handleInputChange(event) {
+    const formType = event.target.id;
+    this.setState({
+      [formType]: event.target.value,
+    });
   }
 
   handleFormSubmit(event) {
     event.preventDefault();
-    axios.post("/api/loan");
+    const {
+      first_name,
+      last_name,
+      street,
+      city,
+      state,
+      zip_code,
+      phone1,
+      phone2,
+      phone3,
+      month,
+      day,
+      year,
+      ssn,
+      pre_tax_income,
+    } = this.state;
+    const formData = {
+      first_name: first_name,
+      last_name: last_name,
+      street: street,
+      city: city,
+      state: state,
+      zip_code: zip_code,
+      phone_number: `(${phone1}) ${phone2}-${phone3}`,
+      dob: `${month} ${day}, ${year}`,
+      ssn: ssn,
+      pre_tax_income: pre_tax_income,
+    };
+    console.log("formData", formData);
+    axios.post("/api/loans", formData).then((res) => {
+      console.log(res);
+    });
   }
 
   render() {
     return (
-      <form className="loan-form" onClick={this.handleFormSubmit}>
+      <form className="loan-form" onSubmit={this.handleFormSubmit}>
         <div className="form-fields">
           <ul className="form-container">
-            <li class="form-list-item">
+            <li className="form-list-item">
               <label htmlFor="first_name">FIRST NAME</label>
-              <input type="text" id="first_name" name="first_name" />
+              <input
+                type="text"
+                id="first_name"
+                name="first_name"
+                onChange={this.handleInputChange}
+              />
             </li>
-            <li class="form-list-item">
+            <li className="form-list-item">
               <label htmlFor="last_name">LAST NAME</label>
-              <input type="text" id="last_name" name="last_name" />
+              <input
+                type="text"
+                id="last_name"
+                name="last_name"
+                onChange={this.handleInputChange}
+              />
             </li>
-            <li class="form-list-item">
+            <li className="form-list-item">
               <label htmlFor="street">STREET (No P.0 Boxes)</label>
-              <input type="text" id="street" name="street" />
+              <input
+                type="text"
+                id="street"
+                name="street"
+                onChange={this.handleInputChange}
+              />
             </li>
-            <li class="form-list-item">
+            <li className="form-list-item">
               <label htmlFor="city">CITY</label>
-              <input type="text" id="city" name="city" />
+              <input
+                type="text"
+                id="city"
+                name="city"
+                onChange={this.handleInputChange}
+              />
             </li>
-            <li class="form-list-item">
-              <label htmlFor="state_abbrev">STATE</label>
-              <select type="text" id="state_abbrev" name="state_abbrev">
-                <option value="" selected>
-                  Choose...
-                </option>
+            <li className="form-list-item">
+              <label htmlFor="state">STATE</label>
+              <select
+                type="text"
+                id="state"
+                name="state"
+                onChange={this.handleInputChange}
+              >
+                <option defaultValue="">Choose...</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -94,25 +174,32 @@ export default class LoanForm extends Component {
                 <option value="WY">Wyoming</option>
               </select>
               <label htmlFor="zip_code">ZIP</label>
-              <input type="text" id="zip_code" name="zip_code" />
+              <input
+                type="text"
+                id="zip_code"
+                name="zip_code"
+                onChange={this.handleInputChange}
+              />
             </li>
           </ul>
           <ul className="form-container">
-            <li class="form-list-item">
+            <li className="form-list-item">
               <label>PHONE</label>
               <span>(</span>
-              <input type="number" id="phone-1" pattern="[0-9]{3}" />
+              <input
+                type="text"
+                id="phone1"
+                onChange={this.handleInputChange}
+              />
               <span>)</span>
-              <input type="tel" id="phone-2" pattern="[0-9]{3}" />
+              <input type="tel" id="phone2" onChange={this.handleInputChange} />
               <span>-</span>
-              <input type="tel" id="phone-3" pattern="[0-9]{4}" />
+              <input type="tel" id="phone3" onChange={this.handleInputChange} />
             </li>
-            <li class="form-list-item">
+            <li className="form-list-item">
               <label>DATE OF BIRTH</label>
-              <select id="month">
-                <option value="Month" selected>
-                  MONTH
-                </option>
+              <select id="month" onChange={this.handleInputChange}>
+                <option defaultValue="Month">MONTH</option>
                 <option value="January">January</option>
                 <option value="February">February</option>
                 <option value="March">March</option>
@@ -126,10 +213,8 @@ export default class LoanForm extends Component {
                 <option value="November">November</option>
                 <option value="December">December</option>
               </select>
-              <select id="day">
-                <option value="Day" selected>
-                  DAY
-                </option>
+              <select id="day" onChange={this.handleInputChange}>
+                <option defaultValue="Day">DAY</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -162,10 +247,8 @@ export default class LoanForm extends Component {
                 <option value="30">30</option>
                 <option value="31">31</option>
               </select>
-              <select id="year">
-                <option value="Year" selected>
-                  Year
-                </option>
+              <select id="year" onChange={this.handleInputChange}>
+                <option defaultValue="Year">Year</option>
                 <option value="2020">2020</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>
@@ -259,13 +342,23 @@ export default class LoanForm extends Component {
                 <option value="1930">1930</option>
               </select>
             </li>
-            <li class="form-list-item">
+            <li className="form-list-item">
               <label htmlFor="ssn">LAST 4 DIGITS OF SOCIAL SECURITY</label>
-              <input type="text" id="ssn" name="ssn" />
+              <input
+                type="text"
+                id="ssn"
+                name="ssn"
+                onChange={this.handleInputChange}
+              />
             </li>
-            <li class="form-list-item">
-              <label htmlFor="income">PRE-TAX ANNUAL INCOME</label>
-              <input type="text" id="income" name="income" />
+            <li className="form-list-item">
+              <label htmlFor="pre_tax_income">PRE-TAX ANNUAL INCOME</label>
+              <input
+                type="text"
+                id="pre_tax_income"
+                name="pre_tax_income"
+                onChange={this.handleInputChange}
+              />
             </li>
           </ul>
         </div>

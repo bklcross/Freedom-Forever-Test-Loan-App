@@ -4,10 +4,6 @@ import Logo from "../../images/loanPalLogo.png";
 import "./style.css";
 
 export default class Nav extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <nav className="nav">

@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    state_abbrev: {
+    state: {
       type: DataTypes.STRING,
       allowNull: false,
     },

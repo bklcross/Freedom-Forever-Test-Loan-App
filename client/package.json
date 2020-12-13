@@ -2,6 +2,7 @@
   "name": "Loan_App",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080/",
   "dependencies": {
     "axios": "^0.21.0",
     "react": "^17.0.1",

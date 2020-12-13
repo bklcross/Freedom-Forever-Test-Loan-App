@@ -19,7 +19,11 @@ export default class Welcome extends Component {
             </a>
           </div>
           <div className="introduction-img-container col-md-6">
-            <img className="introduction-img" src={LoanImage} />
+            <img
+              className="introduction-img"
+              src={LoanImage}
+              alt="loan-hero-image"
+            />
           </div>
         </section>
         <section className="benefits">

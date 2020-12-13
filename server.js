@@ -3,7 +3,7 @@ const db = require("./models");
 const router = require("./routes/apiRoutes");
 
 //define port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 //create express instance
 const app = express();
@@ -13,11 +13,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //set up routes
-app.use("/api",router);
+app.use("/api", router);
 
 //syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
-    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+db.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
+    console.log(
+      `==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`
+    );
   });
 });
