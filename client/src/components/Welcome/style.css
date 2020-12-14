@@ -1,7 +1,7 @@
 .welcome {
   background-color: #ffffff;
   padding: 50px;
-  height: 100vh;
+  height: 100%;
 }
 @media (min-width: 992px) {
   .welcome {
@@ -58,6 +58,7 @@
 .welcome .introduction .introduction-text-container .apply-link {
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 @media (min-width: 992px) {
   .welcome .introduction .introduction-text-container .apply-link {

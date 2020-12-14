@@ -2,7 +2,7 @@
   background-color: #292929fc;
   padding: 50px 0 150px 0;
   color: #ffffff;
-  height: 100vh;
+  height: 100%;
 }
 @media (min-width: 992px) {
   .loan-form {
