@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import LoanImage from "../../images/home-loan.svg";
 import "./style.css";
 
@@ -14,9 +15,9 @@ export default class Welcome extends Component {
               credit card debt. The LoanPal gives competitive interest rates and
               helps to consolidate your debt.
             </p>
-            <a className="apply-link" href="/loan-form">
+            <Link className="apply-link" to="/loan-form">
               <button className="apply-btn">Apply Now</button>
-            </a>
+            </Link>
           </div>
           <div className="introduction-img-container col-12 col-lg-6">
             <img
