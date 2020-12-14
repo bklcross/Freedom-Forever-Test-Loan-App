@@ -194,3 +194,13 @@
   margin: 32px auto;
   padding: 0 16px;
 }
+.loan-form .success-message {
+  font-family: "Lato";
+  color: lightgreen;
+  position: absolute;
+  bottom: -16px;
+}
+[disabled] input,
+[disabled] select {
+  opacity: 50%;
+}

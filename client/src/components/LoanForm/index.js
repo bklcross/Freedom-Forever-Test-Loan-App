@@ -22,6 +22,7 @@ export default class LoanForm extends Component {
       year: "",
       ssn: "",
       pre_tax_income: "",
+      success: false,
     };
 
     //bind events
@@ -67,8 +68,34 @@ export default class LoanForm extends Component {
       pre_tax_income: pre_tax_income,
     };
     axios.post("/api/loans", formData).then((res) => {
-      console.log(res);
+      console.log(res.data);
+      if (res.data.success) {
+        this.setState({
+          success: true,
+        });
+      }
     });
+  }
+
+  renderSuccessMessage() {
+    let result = null;
+    if (this.state.success) {
+      result = (
+        <div className="success-message">
+          Your application submission was a success!
+        </div>
+      );
+    }
+
+    return result;
+  }
+
+  disableForm() {
+    let result = false;
+    if (this.state.success) {
+      result = true;
+    }
+    return result;
   }
 
   render() {
@@ -76,7 +103,10 @@ export default class LoanForm extends Component {
       <>
         <Banner />
         <form className="loan-form" onSubmit={this.handleFormSubmit}>
-          <div className="form-fields container">
+          <fieldset
+            className="form-fields container"
+            disabled={this.disableForm()}
+          >
             <ul className="form-container col-lg-6">
               <li className="form-list-item">
                 <label htmlFor="first_name">FIRST NAME</label>
@@ -394,9 +424,10 @@ export default class LoanForm extends Component {
                   type="submit"
                   value="Submit Application"
                 />
+                {this.renderSuccessMessage()}
               </li>
             </ul>
-          </div>
+          </fieldset>
           <div className="disclaimer-container">
             <p className="disclaimer">
               LoanPal strives for compliance with all applicable state and
