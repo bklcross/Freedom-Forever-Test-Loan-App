@@ -1,6 +1,7 @@
 .welcome {
   background-color: #ffffff;
   padding: 50px;
+  height: 100vh;
 }
 @media (min-width: 992px) {
   .welcome {

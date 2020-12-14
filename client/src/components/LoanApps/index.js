@@ -71,7 +71,9 @@ export default class LoanApps extends Component {
       result = submissions.map((submission) => {
         return (
           <tr key={submission.id}>
-            <td className="align-middle">{submission.first_name}</td>
+            <td className="align-middle" scope="row">
+              {submission.first_name}
+            </td>
             <td className="align-middle">{submission.last_name}</td>
             <td className="align-middle">{submission.street}</td>
             <td className="align-middle">{submission.city}</td>
@@ -83,7 +85,7 @@ export default class LoanApps extends Component {
             <td className="align-middle">{submission.pre_tax_income}</td>
             <td className="align-middle">
               <i
-                className="fas fa-trash-alt"
+                className="fas fa-trash-alt delete-submission"
                 target={submission.id}
                 onClick={this.deleteSubmission}
               ></i>
@@ -111,100 +113,125 @@ export default class LoanApps extends Component {
           </div>
           <div className="search-type-container">
             <label htmlFor="search-type">Filter</label>
-            <span>First Name</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="first_name"
-              text="First Name"
-              onChange={this.handleRadioChange}
-            />
-            <span>Last Name</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="last_name"
-              text="Last Name"
-              onChange={this.handleRadioChange}
-            />
-            <span>Street</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="street"
-              text="Street"
-              onChange={this.handleRadioChange}
-            />
-            <span>City</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="city"
-              text="City"
-              onChange={this.handleRadioChange}
-            />
-            <span>State</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="state"
-              text="State"
-              onChange={this.handleRadioChange}
-            />
-            <span>Zip</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="zip"
-              text="Zip"
-              onChange={this.handleRadioChange}
-            />
-            <span>Phone Numeber</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="phone_number"
-              text="Phone Number"
-              onChange={this.handleRadioChange}
-            />
-            <span>Date of Birth</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="dob"
-              text="Date of Birth"
-              onChange={this.handleRadioChange}
-            />
-            <span>Last 4 Digits of SSN</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="ssn"
-              text="Last 4 Digits of SSN"
-              onChange={this.handleRadioChange}
-            />
-            <span>Pre-Tax Annual Income</span>
-            <input
-              type="radio"
-              name="search-type"
-              value="pre_tax_income"
-              text="Pre-Tax Annual Income"
-              onChange={this.handleRadioChange}
-            />
+            <ul className="search-type-radio-list">
+              <li className="search-type-radio-list-item">
+                <label>First Name</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="first_name"
+                  text="First Name"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>Last Name</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="last_name"
+                  text="Last Name"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>Street</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="street"
+                  text="Street"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>City</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="city"
+                  text="City"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>State</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="state"
+                  text="State"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>Zip</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="zip"
+                  text="Zip"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>Phone Numeber</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="phone_number"
+                  text="Phone Number"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>Date of Birth</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="dob"
+                  text="Date of Birth"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>Last 4 Digits of SSN</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="ssn"
+                  text="Last 4 Digits of SSN"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+              <li className="search-type-radio-list-item">
+                <label>Pre-Tax Annual Income</label>
+                <input
+                  type="radio"
+                  name="search-type"
+                  value="pre_tax_income"
+                  text="Pre-Tax Annual Income"
+                  onChange={this.handleRadioChange}
+                />
+              </li>
+            </ul>
           </div>
         </div>
-        <table className="loan-submission-table">
+        <caption>Searched Submissions</caption>
+        <table className="loan-submission-table table container">
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Street</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Zip</th>
-              <th>Date of Birth</th>
-              <th>Last 4 Digits of SSN</th>
-              <th>Pre-Tax Annual Income</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Street</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+              <th scope="col">Zip Code</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Date of Birth</th>
+              <th scope="col">Last 4 Digits of SSN</th>
+              <th scope="col">Pre-Tax Annual Income</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>{this.renderSubmission()}</tbody>

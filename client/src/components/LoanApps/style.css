@@ -1,0 +1,80 @@
+.loan-submissions {
+  background-color: #292929fc;
+  padding: 50px 32px 150px 32px;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+}
+.loan-submissions .loan-search {
+  max-width: 1440px;
+}
+.loan-submissions caption {
+  max-width: 1440px;
+  color: #ffffff;
+  font-size: 32px;
+  margin: 0 auto;
+  text-align: center;
+}
+.loan-submissions .search-bar {
+  display: flex;
+  align-items: center;
+}
+.loan-submissions .search-bar label {
+  font-size: 20px;
+  font-family: "Lato";
+  margin: 0 16px 0 0;
+}
+.loan-submissions .search-bar input {
+  width: 100%;
+  background-color: #292929fc;
+  color: #ffffff;
+  border: 2px solid #ffffff69;
+  padding: 8px;
+}
+.loan-submissions .search-type-container {
+  margin: 16px 0 0 0;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .loan-submissions .search-type-container {
+    margin: 16px 0 0 75px;
+  }
+}
+.loan-submissions .search-type-container > label {
+  font-size: 17px;
+  font-family: "Lato";
+  margin: 0;
+}
+.loan-submissions .search-type-container .search-type-radio-list {
+  list-style: none;
+  padding: 0 0 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.loan-submissions .search-type-container .search-type-radio-list-item {
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+}
+.loan-submissions .search-type-container .search-type-radio-list-item label {
+  margin: 0 8px 0 0;
+}
+.loan-submissions .loan-submission-table {
+  max-width: 1440px;
+  width: unset;
+  margin: 32px auto;
+}
+.loan-submissions .loan-submission-table th {
+  color: #ffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+.loan-submissions .loan-submission-table td {
+  color: #ffff;
+  font-size: 16px;
+}
+.loan-submissions .loan-submission-table .delete-submission {
+  color: rgb(207, 95, 95);
+}
