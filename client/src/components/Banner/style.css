@@ -1,0 +1,26 @@
+.banner {
+  background: rgb(18, 101, 112);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 101, 112, 1) 0%,
+    rgba(9, 124, 136, 1) 28%,
+    rgba(0, 231, 254, 1) 100%
+  );
+  padding: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.banner h2 {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Lato";
+  font-size: 32px;
+  font-weight: 300;
+}
+.banner p {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Lato";
+  font-size: 22px;
+  font-weight: 300;
+}

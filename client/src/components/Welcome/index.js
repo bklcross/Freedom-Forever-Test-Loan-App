@@ -7,7 +7,7 @@ export default class Welcome extends Component {
     return (
       <div className="welcome">
         <section className="introduction row">
-          <div className="introduction-text-container col-md-6">
+          <div className="introduction-text-container col-12 col-lg-6">
             <h1 className="title">Welcome to LoanPal</h1>
             <p className="subtitle">
               The first step to financial wellness is taking control of your
@@ -18,7 +18,7 @@ export default class Welcome extends Component {
               <button className="apply-btn">Apply Now</button>
             </a>
           </div>
-          <div className="introduction-img-container col-md-6">
+          <div className="introduction-img-container col-12 col-lg-6">
             <img
               className="introduction-img"
               src={LoanImage}

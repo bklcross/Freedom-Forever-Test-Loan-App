@@ -34,7 +34,7 @@ export default class Nav extends Component {
                   }
                   to="/loan-apps"
                 >
-                  See Submissions
+                  View Submissions
                 </Link>
               </li>
             </ul>

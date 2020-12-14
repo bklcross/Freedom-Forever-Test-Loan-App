@@ -1,5 +1,11 @@
 .welcome {
   background-color: #ffffff;
+  padding: 50px;
+}
+@media (min-width: 992px) {
+  .welcome {
+    padding: 0 16px;
+  }
 }
 .welcome .section-container {
   display: flex;
@@ -20,31 +26,69 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 32px 16px;
+}
+@media (min-width: 992px) {
+  .welcome .introduction .introduction-text-container {
+    padding: 0 16px;
+  }
 }
 .welcome .introduction .introduction-text-container .title {
   font-size: 56px;
   font-family: "Lato";
   font-weight: 700;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .welcome .introduction .introduction-text-container .title {
+    text-align: left;
+  }
 }
 .welcome .introduction .introduction-text-container .subtitle {
   font-size: 24px;
   font-family: "Lato";
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .welcome .introduction .introduction-text-container .subtitle {
+    text-align: left;
+  }
+}
+.welcome .introduction .introduction-text-container .apply-link {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .welcome .introduction .introduction-text-container .apply-link {
+    justify-content: flex-start;
+  }
 }
 .welcome .introduction .introduction-text-container .apply-btn {
-  background-color: #34d9eb;
+  background-color: #9a00a0;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   border: none;
   padding: 8px 16px;
 }
 .welcome .introduction .introduction-text-container .apply-btn:hover {
-  background-color: #20828d;
-  color: #ffffff;
+  opacity: 80%;
 }
 .welcome .introduction .introduction-img-container {
-  display: flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
+  margin: auto;
+}
+@media (min-width: 992px) {
+  .welcome .introduction .introduction-img-container {
+    display: flex;
+  }
+}
+@media (min-width: 992px) {
+  .welcome .introduction .introduction-img-container .introduction-img {
+    max-width: unset;
+  }
 }
 .welcome .benefits {
   padding: 0 0 100px 0;
@@ -57,6 +101,18 @@
 .welcome .benefits .container {
   max-width: 1440px;
 }
+.welcome .benefits .benefit-card {
+  margin-bottom: 32px;
+}
 .welcome .benefits .benefit-card i {
   color: #720e59;
+}
+.welcome .benefits .benefit-card p {
+  max-width: 300px;
+  margin: auto;
+}
+@media (min-width: 992px) {
+  .welcome .benefits .benefit-card p {
+    max-width: unset;
+  }
 }
