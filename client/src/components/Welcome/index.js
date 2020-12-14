@@ -22,7 +22,7 @@ export default class Welcome extends Component {
             <img
               className="introduction-img"
               src={LoanImage}
-              alt="loan-hero-image"
+              alt="loan-hero-pic"
             />
           </div>
         </section>

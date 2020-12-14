@@ -9,7 +9,7 @@ export default class Nav extends Component {
       <nav className="nav">
         <div className="navbar navbar-expand-lg navbar-light">
           <Link className="navbar-brand" to="/">
-            <img className="nav-logo" src={Logo} />
+            <img className="nav-logo" src={Logo} alt="loanPal logo" />
           </Link>
           <div className="nav-bar">
             <ul className="navbar-nav">

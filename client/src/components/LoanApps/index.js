@@ -71,9 +71,7 @@ export default class LoanApps extends Component {
       result = submissions.map((submission) => {
         return (
           <tr key={submission.id}>
-            <td className="align-middle" scope="row">
-              {submission.first_name}
-            </td>
+            <td className="align-middle">{submission.first_name}</td>
             <td className="align-middle">{submission.last_name}</td>
             <td className="align-middle">{submission.street}</td>
             <td className="align-middle">{submission.city}</td>
@@ -217,7 +215,7 @@ export default class LoanApps extends Component {
             </ul>
           </div>
         </div>
-        <caption>Searched Submissions</caption>
+        <div className="caption">Searched Submissions</div>
         <table className="loan-submission-table table container">
           <thead>
             <tr>
