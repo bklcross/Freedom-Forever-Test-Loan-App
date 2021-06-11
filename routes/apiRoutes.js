@@ -1,11 +1,6 @@
 const router = require("express").Router();
 var db = require("../models");
 const { Op } = require("sequelize");
-// const path = require("path");
-
-// router.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
 
 router.get("/loans", (req, res) => {
   db.loan_submissions
