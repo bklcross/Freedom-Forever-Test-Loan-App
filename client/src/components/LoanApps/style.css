@@ -78,3 +78,8 @@
 .loan-submissions .loan-submission-table .delete-submission {
   color: rgb(207, 95, 95);
 }
+
+.btn-method {
+  width: 250px;
+  margin: 8px auto;
+}
